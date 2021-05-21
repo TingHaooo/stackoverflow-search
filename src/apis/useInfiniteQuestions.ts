@@ -10,7 +10,7 @@ const createGetKey = (params: any) => (pageIndex: number, previousPageData: any)
     params
   ]
 }
-interface IQestionsData {
+export interface IQestionData {
   question_id: number
   score: number
   answer_count: number
@@ -25,7 +25,7 @@ interface IQestionsData {
 }
 export interface IQestionsRes {
   has_more: boolean,
-  items: IQestionsData[]
+  items: IQestionData[]
 }
 interface IUseInfiniteQestions {
   tagged?: string

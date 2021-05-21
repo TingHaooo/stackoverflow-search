@@ -3,7 +3,7 @@ import useSWR from "swr"
 export interface ITagData {
   name: string
 }
-export interface ITagRes {
+export interface ITagsRes {
   has_more: boolean,
   items: ITagData[]
 }

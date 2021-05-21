@@ -1,9 +1,10 @@
 import { Box, Button, SimpleGrid } from "@chakra-ui/react";
+import { ITagData } from "../apis/useTags";
 
 interface ITagsProps {
   handleTagOnClick: (name: string) => void;
   curTag: string;
-  tags: any[];
+  tags: ITagData[];
 }
 
 const Tags = (props: ITagsProps) => {
