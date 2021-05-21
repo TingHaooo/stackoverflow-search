@@ -6,21 +6,37 @@ import fetcher from "./fetcher"
 const createGetKey = (params: any) => (pageIndex: number, previousPageData: any) => {
   if (previousPageData && !previousPageData.has_more) return null
   return [
-    `/answers?pagesize=20&order=desc&sort=activity&site=stackoverflow&page=${pageIndex + 1}`, 
+    `/questions?pagesize=20&order=desc&sort=activity&site=stackoverflow&page=${pageIndex + 1}`, 
     params
   ]
 }
-
-interface IUseInfiniteQestions {
+export interface IQuestionData {
+  question_id: number
+  score: number
+  answer_count: number
+  view_count: number
+  title: string
+  link: string
+  is_answered: boolean
+  owner: {
+    display_name: string
+    profile_image: string
+  }
+}
+export interface IQuestionsRes {
+  has_more: boolean,
+  items: IQuestionData[]
+}
+interface IUseInfiniteQuestions {
   tagged?: string
 }
 
-const useInfiniteQestions = ({ tagged }: IUseInfiniteQestions) => {
+const useInfiniteQuestions = <T>({ tagged }: IUseInfiniteQuestions) => {
   const params = useMemo(() => ({ tagged }), [tagged])
 
   // useSWRInfinite doesn't support global config
-  const questionsQuery = useSWRInfinite(createGetKey(params), fetcher, swrOptions)
+  const questionsQuery = useSWRInfinite<T>(createGetKey(params), fetcher as any, swrOptions)
   return questionsQuery
 }
 
-export default useInfiniteQestions
+export default useInfiniteQuestions
