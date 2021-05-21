@@ -9,7 +9,7 @@ const useTags = ({ inname }: IUseTags) => {
   const params = useMemo(() => ({ inname: inname }), [inname])
   const tagsQuery = useSWR(
     [
-      `/tags?order=decs&sort=popular&site=stackoverflow`, 
+      `/tags?order=desc&sort=popular&site=stackoverflow`, 
       params
     ]
   )
