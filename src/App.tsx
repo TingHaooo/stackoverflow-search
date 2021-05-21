@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
 import { SWRConfig } from "swr";
 import QuestionSearch from "./questionSearch";
 import fetcher from "./apis/fetcher";
+import { ChakraProvider } from "@chakra-ui/react";
 
 export const swrOptions = {
   revalidateOnFocus: false,
@@ -13,7 +13,7 @@ export const swrOptions = {
 
 function App() {
   return (
-    <Box>
+    <ChakraProvider>
       <SWRConfig
         value={{
           fetcher,
@@ -22,7 +22,7 @@ function App() {
       >
         <QuestionSearch />
       </SWRConfig>
-    </Box>
+    </ChakraProvider>
   );
 }
 
