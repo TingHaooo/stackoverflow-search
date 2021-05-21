@@ -10,7 +10,7 @@ const createGetKey = (params: any) => (pageIndex: number, previousPageData: any)
     params
   ]
 }
-export interface IQestionData {
+export interface IQuestionData {
   question_id: number
   score: number
   answer_count: number
@@ -23,15 +23,15 @@ export interface IQestionData {
     profile_image: string
   }
 }
-export interface IQestionsRes {
+export interface IQuestionsRes {
   has_more: boolean,
-  items: IQestionData[]
+  items: IQuestionData[]
 }
-interface IUseInfiniteQestions {
+interface IUseInfiniteQuestions {
   tagged?: string
 }
 
-const useInfiniteQestions = <T>({ tagged }: IUseInfiniteQestions) => {
+const useInfiniteQuestions = <T>({ tagged }: IUseInfiniteQuestions) => {
   const params = useMemo(() => ({ tagged }), [tagged])
 
   // useSWRInfinite doesn't support global config
@@ -39,4 +39,4 @@ const useInfiniteQestions = <T>({ tagged }: IUseInfiniteQestions) => {
   return questionsQuery
 }
 
-export default useInfiniteQestions
+export default useInfiniteQuestions

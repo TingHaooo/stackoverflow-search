@@ -1,8 +1,8 @@
 import { Box, SimpleGrid, Avatar, Link, Divider } from "@chakra-ui/react";
-import { IQestionData } from "../apis/useInfiniteQuestions";
+import { IQuestionData } from "../apis/useInfiniteQuestions";
 
 interface IQuestionProps {
-  question: IQestionData;
+  question: IQuestionData;
 }
 
 const Question = (props: IQuestionProps) => {
@@ -66,7 +66,7 @@ const Question = (props: IQuestionProps) => {
 };
 
 interface IQuestionsProps {
-  questions: IQestionData[];
+  questions: IQuestionData[];
 }
 
 const Questions = (props: IQuestionsProps) => {

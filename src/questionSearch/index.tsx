@@ -1,9 +1,9 @@
 import { Input, Box, Spinner, Button } from "@chakra-ui/react";
 import { ChangeEvent, useState } from "react";
-import { useInfiniteQestions, useTags } from "../apis";
-import { IQestionsRes } from "../apis/useInfiniteQuestions";
+import { useInfiniteQuestions, useTags } from "../apis";
+import { IQuestionsRes } from "../apis/useInfiniteQuestions";
 import { ITagsRes } from "../apis/useTags";
-import Questions from "./Qestions";
+import Questions from "./Questions";
 import Tags from "./Tags";
 
 interface ITagsAndQuestions {
@@ -18,7 +18,7 @@ const TagsAndQuestions = (props: ITagsAndQuestions) => {
     setSize,
     isValidating,
     error,
-  } = useInfiniteQestions<IQestionsRes>({
+  } = useInfiniteQuestions<IQuestionsRes>({
     tagged: curTag,
   });
 
@@ -44,7 +44,7 @@ const TagsAndQuestions = (props: ITagsAndQuestions) => {
       />
       {questionsArr && (
         <>
-          {questionsArr.map((questions: IQestionsRes) => (
+          {questionsArr.map((questions: IQuestionsRes) => (
             <Box key={questions.items[0].question_id}>
               <Questions questions={questions.items} />
               {isValidating && (

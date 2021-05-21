@@ -1,7 +1,7 @@
-import useInfiniteQestions from "./useInfiniteQuestions"
+import useInfiniteQuestions from "./useInfiniteQuestions"
 import useTags from "./useTags"
 
 export {
-  useInfiniteQestions,
+  useInfiniteQuestions,
   useTags
 }
