@@ -1,15 +1,23 @@
 import { useMemo } from "react"
 import useSWR from "swr"
+export interface ITagData {
+  name: string
+}
+export interface ITagRes {
+  has_more: boolean,
+  items: ITagData[]
+}
 
 interface IUseTags {
   inname: string
 }
 
-const useTags = ({ inname }: IUseTags) => {
+
+const useTags = <T>({ inname }: IUseTags) => {
   const params = useMemo(() => ({ inname: inname }), [inname])
-  const tagsQuery = useSWR(
+  const tagsQuery = useSWR<T>(
     [
-      `/tags?order=desc&sort=popular&site=stackoverflow`, 
+      `/tags?pagesize=10&order=desc&sort=popular&site=stackoverflow`, 
       params
     ]
   )
