@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/stackoverflow-search/static/js/main.1777d45b.chunk.js",
-    "main.js.map": "/stackoverflow-search/static/js/main.1777d45b.chunk.js.map",
+    "main.js": "/stackoverflow-search/static/js/main.68e42b66.chunk.js",
+    "main.js.map": "/stackoverflow-search/static/js/main.68e42b66.chunk.js.map",
     "runtime-main.js": "/stackoverflow-search/static/js/runtime-main.e5e075ac.js",
     "runtime-main.js.map": "/stackoverflow-search/static/js/runtime-main.e5e075ac.js.map",
     "static/js/2.2cc4e152.chunk.js": "/stackoverflow-search/static/js/2.2cc4e152.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.e5e075ac.js",
     "static/js/2.2cc4e152.chunk.js",
-    "static/js/main.1777d45b.chunk.js"
+    "static/js/main.68e42b66.chunk.js"
   ]
 }
