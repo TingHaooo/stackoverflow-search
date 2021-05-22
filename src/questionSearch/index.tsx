@@ -77,6 +77,10 @@ const Index = () => {
     inname: search,
   });
 
+  /**
+   * @todo
+   * It's is better to have debounce for searching
+   */
   const handleSearch = (e: ChangeEvent<any>) => {
     setSearch(e.target.value);
   };
